@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { databaseConfig } from './config/database.config';
 import { ItemsModule } from './items/items.module';
+import { McpModule } from './mcp/mcp.module';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { ItemsModule } from './items/items.module';
     }),
     TypeOrmModule.forRoot(databaseConfig),
     ItemsModule,
+    McpModule,
   ],
   controllers: [AppController],
   providers: [AppService],
