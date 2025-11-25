@@ -4,9 +4,9 @@ export const databaseConfig: TypeOrmModuleOptions = {
   type: 'postgres',
   host: process.env.NJS_POSTGRES_HOST || 'njs_postgres_db',
   port: parseInt(process.env.NJS_POSTGRES_PORT || '5432', 10),
-  username: process.env.NJS_POSTGRES_USER || 'postgres',
-  password: process.env.NJS_POSTGRES_PASSWORD || 'postgres',
-  database: process.env.NJS_POSTGRES_DB || 'nestjs_starter',
+  username: process.env.NJS_POSTGRES_USER || 'app_user',
+  password: process.env.NJS_POSTGRES_PASSWORD || 'app_password',
+  database: process.env.NJS_POSTGRES_DB || 'app_db',
   autoLoadEntities: true,
   synchronize: true, // Set to false in production
 };
