@@ -1,0 +1,28 @@
+{
+    "LOG": true,
+    "CLAUDE_PATH": "/home/vscode/.nvm/versions/node/v24.11.1/bin/claude",
+    "HOST": "127.0.0.1",
+    "PORT": 8080,
+    "APIKEY": "1",
+    "API_TIMEOUT_MS": 600000,
+    "OPEN_ROUTER_API_KEY": "$OPEN_ROUTER_API_KEY",
+    "Providers": [
+        {
+            "name": "openrouter",
+            "api_base_url": "https://openrouter.ai/api/v1/chat/completions",
+            "api_key": "$OPEN_ROUTER_API_KEY",
+            "models": [
+                "anthropic/claude-opus-4.5",
+                "anthropic/claude-sonnet-4.5"
+            ]
+        }
+    ],
+    "Router": {
+        "default": "openrouter,anthropic/claude-opus-4.5",
+        "background": "openrouter,anthropic/claude-sonnet-4.5",
+        "think": "openrouter,anthropic/claude-opus-4.5",
+        "longContext": "openrouter,anthropic/claude-sonnet-4.5",
+        "webSearch": "openrouter,anthropic/claude-sonnet-4.5"
+    },
+    "NON_INTERACTIVE_MODE": false
+}

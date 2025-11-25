@@ -1,0 +1,1 @@
+Copy the .claude-code-router folder to ~/.claude-code-router, also set required env keys either in the ~/.claude-code-router/config.json or using export in your shell, as required.
