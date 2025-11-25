@@ -1,0 +1,38 @@
+{
+    "permissions": {
+        "allow": [
+            "Bash(grep:*)",
+            "Bash(ls:*)",
+            "Bash(source:*)",
+            "Bash(find:*)",
+            "Bash(mv:*)",
+            "Bash(mkdir:*)",
+            "Bash(tree:*)",
+            "Bash(ruff:*)",
+            "Bash(touch:*)",
+            "Bash(cat:*)",
+            "Bash(ruff check:*)",
+            "Bash(pytest:*)",
+            "Bash(python:*)",
+            "Bash(python -m pytest:*)",
+            "Bash(python3 -m pytest:*)",
+            "WebFetch(domain:docs.anthropic.com)",
+            "WebFetch(domain:github.com)",
+            "Write(./src/**)",
+            "Write(./tasks/**)",
+            "Write(./tests/**)",
+            "WebFetch(domain:openai.github.io)"
+        ],
+        "deny": [
+            "Read(./.env)",
+            "Read(./.env.*)",
+            "Read(./secrets/**)",
+            "Read(./config/credentials.json)",
+            "Read(./build)",
+            "Read(./.git/config)",
+            "Read(./.pytest_cache)",
+            "Read(./.pdm-build)"
+        ]
+    },
+    "env": {}
+}

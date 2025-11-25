@@ -1,0 +1,55 @@
+services:
+  python_starter:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../..:/workspaces:cached
+
+    depends_on:
+      - njs_redis
+      - njs_postgres_db
+
+    # Overrides default command so things don't shut down after the process ends.
+    # command: sleep infinity
+    command: tail -f /dev/null
+
+    # Use "forwardPorts" in **devcontainer.json** to forward an app port locally. 
+    # (Adding the "ports" property to this file will not forward from a Codespace.)
+    networks:
+      - dev_network
+
+  njs_redis:
+    image: redis:8.2.1-alpine
+    command: redis-server --timeout 300 --maxclients 1000 --notify-keyspace-events Ex
+    networks:
+      - dev_network
+
+  # PostgreSQL service with pgvector extension
+  njs_postgres_db:
+    # Use the official pgvector image for PostgreSQL 17
+    image: pgvector/pgvector:pg17
+    environment:
+      # Set credentials from a .env file for security
+      - POSTGRES_DB=${NJS_POSTGRES_DB}
+      - POSTGRES_USER=${NJS_POSTGRES_USER}
+      - POSTGRES_PASSWORD=${NJS_POSTGRES_PASSWORD}
+    volumes:
+      # Persist database data across container restarts
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      # Expose PostgreSQL on port 5432 to your local machine for tools like DBeaver/psql
+      # Format: "HOST:CONTAINER"
+      - "5432:5432"
+    networks:
+      - dev_network
+    restart: unless-stopped
+
+networks:
+  dev_network:
+    external: false
+
+
+# This defines the named volume that postgres_db will use for data persistence.
+volumes:
+  postgres_data: {}
