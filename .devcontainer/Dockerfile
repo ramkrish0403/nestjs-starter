@@ -13,13 +13,6 @@ RUN apt-get update && \
 # Switch to the non-root user 'vscode'
 USER vscode
 
-# Install uv (a fast Python package installer and resolver)
-RUN curl -LsSf https://astral.sh/uv/install.sh | sh
-
-# Add uv's shell completion to the bash profile for the vscode user
-RUN echo 'eval "$(uv generate-shell-completion bash)"' >> ~/.bashrc
-
-
 # Make nvm version an argument to easily update it
 ARG NVM_VERSION=0.39.7
 

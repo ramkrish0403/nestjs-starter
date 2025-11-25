@@ -1,5 +1,5 @@
 services:
-  python_starter:
+  nestjs_starter:
     build: 
       context: .
       dockerfile: Dockerfile
