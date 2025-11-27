@@ -16,7 +16,9 @@
                 "github.vscode-pull-request-github",
                 "eamodio.gitlens",
                 "ms-toolsai.jupyter",
-                "GitHub.copilot"
+                "GitHub.copilot",
+                "humao.rest-client",
+                "DhananjaySenday.mcp--inspector"
             ]
         }
     },
