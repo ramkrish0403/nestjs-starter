@@ -18,7 +18,8 @@
                 "ms-toolsai.jupyter",
                 "GitHub.copilot",
                 "humao.rest-client",
-                "DhananjaySenday.mcp--inspector"
+                "DhananjaySenday.mcp--inspector",
+                "donjayamanne.typescript-notebook"
             ]
         }
     },
