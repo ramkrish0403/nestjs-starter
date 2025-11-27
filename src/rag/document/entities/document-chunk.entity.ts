@@ -17,12 +17,12 @@ export class DocumentChunk {
   @Column({ type: 'text' })
   content: string;
 
-  // pgvector column - stored as string, handled via raw SQL for similarity search
+  // pgvector column - skip TypeORM sync, manage manually
   // The vector(1536) type matches OpenAI text-embedding-ada-002 dimensions
-  @Column({ type: 'text', nullable: true })
+  @Column({ type: 'text', nullable: true, insert: false, select: false })
   embedding: string;
 
-  @Column({ type: 'int' })
+  @Column({ type: 'int', name: 'chunk_index' })
   chunkIndex: number;
 
   @Column({ type: 'jsonb', nullable: true })

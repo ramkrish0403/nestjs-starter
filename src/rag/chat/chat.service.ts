@@ -98,7 +98,7 @@ export class ChatService {
         c.metadata,
         c.chunk_index as "chunkIndex",
         d.id as "document.id",
-        d.original_name as "document.originalName",
+        d."originalName" as "document.originalName",
         1 - (c.embedding <=> $1::vector) as similarity
       FROM document_chunks c
       INNER JOIN documents d ON c.document_id = d.id
