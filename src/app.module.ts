@@ -7,6 +7,7 @@ import { databaseConfig } from './config/database.config';
 import { ItemsModule } from './items/items.module';
 import { McpModule } from './mcp/mcp.module';
 import { LanggraphModule } from './langgraph/langgraph.module';
+import { RagModule } from './rag/rag.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { LanggraphModule } from './langgraph/langgraph.module';
     ItemsModule,
     McpModule,
     LanggraphModule,
+    RagModule,
   ],
   controllers: [AppController],
   providers: [AppService],
