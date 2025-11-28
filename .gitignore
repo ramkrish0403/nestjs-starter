@@ -26,3 +26,4 @@ lerna-debug.log*
 #
 *.ipynb
 *.nnb
+**/node_modules/
